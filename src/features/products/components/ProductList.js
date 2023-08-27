@@ -29,24 +29,12 @@ const sortOptions = [
 
 const filters = [
   {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
     id: "category",
     name: "Category",
     options: [
       { value: "new-arrivals", label: "New Arrivals", checked: false },
       { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
+      { value: "travel", label: "Travel", checked: false },
       { value: "organization", label: "Organization", checked: false },
       { value: "accessories", label: "Accessories", checked: false },
       { value: "smartphones", label: "smartphones", checked: false },
@@ -82,7 +70,7 @@ const filters = [
       { value: "12l", label: "12L", checked: false },
       { value: "18l", label: "18L", checked: false },
       { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
+      { value: "40l", label: "40L", checked: false },
       { value: "Apple", label: "Apple", checked: false },
       { value: "Samsung", label: "Samsung", checked: false },
       { value: "OPPO", label: "OPPO", checked: false },
@@ -226,22 +214,37 @@ export default function ProductList() {
   const products = useSelector(selectAllProducts);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filter, setFilter] = useState({});
+  const [sort, setSort] = useState({});
 
   const handleFilter = (e, section, option) => {
-    const newFilter = { ...filter, [section.id]: option.value };
+    console.log(e.target.checked);
+    const newFilter = { ...filter };
+    // TODO: on server it will support multiple tasks
+    if (e.target.checked) {
+      if (newFilter[section.id]) {
+        newFilter[section.id].push(option.value);
+      } else {
+        newFilter[section.id] = [option.value];
+      }
+    } else {
+      const index = newFilter[section.id].findIndex(
+        (el) => el === option.value
+      );
+      newFilter[section.id].splice(index, 1);
+    }
+    console.log({ newFilter });
+
     setFilter(newFilter);
-    dispatch(fetchProductsByFiltersAsync(newFilter));
-    console.log(option.value);
   };
   const handleSort = (e, option) => {
-    const newFilter = { ...filter, _sort: option.sort, _order: option.order };
-    setFilter(newFilter);
-    dispatch(fetchProductsByFiltersAsync(newFilter));
+    const sort = { _sort: option.sort, _order: option.order };
+    console.log({ sort });
+    setSort(sort);
   };
 
   useEffect(() => {
-    dispatch(fetchAllProductsAsync(filter));
-  }, [dispatch]);
+    dispatch(fetchProductsByFiltersAsync({ filter, sort }));
+  }, [dispatch, filter, sort]);
 
   return (
     <div className="bg-white">
