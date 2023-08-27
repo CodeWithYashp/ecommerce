@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList from "./features/product-list/components/ProductList";
+import ProductList from "./features/products/components/ProductList";
 import Home from "./pages/Home";
 // import { Counter } from "./features/counter/Counter";
 import "./App.css";
