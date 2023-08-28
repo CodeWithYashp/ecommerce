@@ -13,6 +13,7 @@ export function createUser(userData) {
   });
 }
 
+
 export function checkUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
     const email = loginInfo.email;
