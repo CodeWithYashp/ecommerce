@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import {
   deleteItemFromCartAsync,
   selectItems,
@@ -28,6 +28,8 @@ export default function Cart() {
 
   return (
     <>
+      {!items.length && <Navigate to="/" replace={true}></Navigate>}
+
       <div>
         <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
@@ -116,12 +118,12 @@ export default function Cart() {
               </Link>
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-              <p>
-                or
+              <p className="text-lg font-semibold">
+                or&nbsp;
                 <Link to="/">
                   <button
                     type="button"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                    className="font-medium text-base text-indigo-600 hover:text-indigo-500"
                   >
                     Continue Shopping
                     <span aria-hidden="true"> &rarr;</span>

@@ -14,7 +14,6 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  console.log(errors);
 
   return (
     <>
@@ -33,14 +32,12 @@ export default function Login() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form
-            noValidate
             className="space-y-6"
+            noValidate
             onSubmit={handleSubmit((data) => {
               dispatch(
                 checkUserAsync({ email: data.email, password: data.password })
               );
-
-              console.log(data);
             })}
           >
             <div>
