@@ -11,7 +11,10 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
-import { createOrderAsync } from "../features/order/orderSlice";
+import {
+  createOrderAsync,
+  selectCurrentOrder,
+} from "../features/order/orderSlice";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -25,6 +28,7 @@ function Checkout() {
   const user = useSelector(selectLoggedInUser);
 
   const items = useSelector(selectItems);
+  const currentOrder = useSelector(selectCurrentOrder);
   const totalAmount = items.reduce(
     (amount, item) => item.price * item.quantity + amount,
     0
@@ -58,16 +62,23 @@ function Checkout() {
       user,
       paymentMethod,
       selectedAddress,
+      status: "pending", //Other status can be delivered, etc.
     };
     // TODO: Redirect to order success page on order success
     // TODO: Clear cart after order
-    // TODO: Change the stock after order 
+    // TODO: Change the stock after order
     dispatch(createOrderAsync(order));
   };
 
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
+      {currentOrder && (
+        <Navigate
+          to={`/order-success/${currentOrder.id}`}
+          replace={true}
+        ></Navigate>
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">

@@ -2418,72 +2418,21 @@
     {
       "email": "user1@gmail.com",
       "password": "Yash@230365",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "Yash Sharma",
+          "email": "ypandey.5602@gmail.com",
+          "phone": "9782527528",
+          "street": "Boys Hostel No. 7 ",
+          "city": "Chandigarh",
+          "state": "Chandigarh",
+          "pinCode": "160014"
+        }
+      ],
       "id": 2
     }
   ],
-  "cart": [
-    {
-      "id": 11,
-      "title": "perfume Oil",
-      "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
-      "price": 13,
-      "discountPercentage": 8.4,
-      "rating": 4.26,
-      "stock": 65,
-      "brand": "Impression of Acqua Di Gio",
-      "category": "fragrances",
-      "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/11/1.jpg",
-        "https://i.dummyjson.com/data/products/11/2.jpg",
-        "https://i.dummyjson.com/data/products/11/3.jpg",
-        "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 2
-    },
-    {
-      "id": 17,
-      "title": "Tree Oil 30ml",
-      "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
-      "price": 12,
-      "discountPercentage": 4.09,
-      "rating": 4.52,
-      "stock": 78,
-      "brand": "Hemani Tea",
-      "category": "skincare",
-      "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/17/1.jpg",
-        "https://i.dummyjson.com/data/products/17/2.jpg",
-        "https://i.dummyjson.com/data/products/17/3.jpg",
-        "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
-      ],
-      "quantity": 3,
-      "user": 2
-    },
-    {
-      "title": "iPhone X",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
-      "discountPercentage": 17.94,
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/2/1.jpg",
-        "https://i.dummyjson.com/data/products/2/2.jpg",
-        "https://i.dummyjson.com/data/products/2/3.jpg",
-        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 1,
-      "id": 18
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "items": [
@@ -2503,13 +2452,13 @@
             "https://i.dummyjson.com/data/products/2/3.jpg",
             "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
           ],
-          "quantity": 1,
+          "quantity": 4,
           "user": 1,
           "id": 18
         }
       ],
-      "totalAmount": 899,
-      "totalItems": 1,
+      "totalAmount": 3596,
+      "totalItems": 4,
       "user": {
         "email": "admin@gmail.com",
         "password": "admin",
@@ -2535,7 +2484,7 @@
         ],
         "id": 1
       },
-      "paymentMethod": "card",
+      "paymentMethod": "cash",
       "selectedAddress": {
         "name": "Yash Sharma",
         "email": "ypandey.5602@gmail.com",
@@ -2545,7 +2494,191 @@
         "state": "Chandigarh",
         "pinCode": "160036"
       },
+      "status": "pending",
       "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": 11,
+          "title": "perfume Oil",
+          "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
+          "price": 13,
+          "discountPercentage": 8.4,
+          "rating": 4.26,
+          "stock": 65,
+          "brand": "Impression of Acqua Di Gio",
+          "category": "fragrances",
+          "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/11/1.jpg",
+            "https://i.dummyjson.com/data/products/11/2.jpg",
+            "https://i.dummyjson.com/data/products/11/3.jpg",
+            "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 2
+        },
+        {
+          "id": 17,
+          "title": "Tree Oil 30ml",
+          "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
+          "price": 12,
+          "discountPercentage": 4.09,
+          "rating": 4.52,
+          "stock": 78,
+          "brand": "Hemani Tea",
+          "category": "skincare",
+          "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/17/1.jpg",
+            "https://i.dummyjson.com/data/products/17/2.jpg",
+            "https://i.dummyjson.com/data/products/17/3.jpg",
+            "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+          ],
+          "quantity": 3,
+          "user": 2
+        }
+      ],
+      "totalAmount": 49,
+      "totalItems": 4,
+      "user": {
+        "email": "user1@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "Boys Hostel No. 7 ",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160014"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "Boys Hostel No. 7 ",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160014"
+      },
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "id": 17,
+          "title": "Tree Oil 30ml",
+          "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
+          "price": 12,
+          "discountPercentage": 4.09,
+          "rating": 4.52,
+          "stock": 78,
+          "brand": "Hemani Tea",
+          "category": "skincare",
+          "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/17/1.jpg",
+            "https://i.dummyjson.com/data/products/17/2.jpg",
+            "https://i.dummyjson.com/data/products/17/3.jpg",
+            "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+          ],
+          "quantity": 3,
+          "user": 2
+        }
+      ],
+      "totalAmount": 36,
+      "totalItems": 3,
+      "user": {
+        "email": "user1@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "Boys Hostel No. 7 ",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160014"
+          }
+        ],
+        "id": 2
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": null,
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 4,
+          "user": 1,
+          "id": 1
+        }
+      ],
+      "totalAmount": 3596,
+      "totalItems": 4,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "admin",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          },
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 4
     }
   ]
 }
