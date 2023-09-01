@@ -2347,6 +2347,15 @@
           "pinCode": "110006",
           "phone": "12312331232",
           "street": "12th cross"
+        },
+        {
+          "name": "Yashika Singla",
+          "email": "yashikayash@gmail.com",
+          "city": "Chandigarh",
+          "state": "Chandigarh",
+          "pinCode": "132132",
+          "phone": "8699245775",
+          "street": "Yash's Heartt"
         }
       ],
       "id": 1
@@ -2368,28 +2377,7 @@
       "id": 2
     }
   ],
-  "cart": [
-    {
-      "title": "iPhone X",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
-      "discountPercentage": 17.94,
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/2/1.jpg",
-        "https://i.dummyjson.com/data/products/2/2.jpg",
-        "https://i.dummyjson.com/data/products/2/3.jpg",
-        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 1,
-      "id": 1
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "items": [
@@ -2650,6 +2638,90 @@
       },
       "status": "pending",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 5,
+          "user": 1,
+          "id": 1
+        },
+        {
+          "title": "FREE FIRE T Shirt",
+          "description": "quality and professional print - It doesn't just look high quality, it is high quality.",
+          "price": 10,
+          "discountPercentage": 14.72,
+          "rating": 4.52,
+          "stock": 128,
+          "brand": "FREE FIRE",
+          "category": "mens-shirts",
+          "thumbnail": "https://i.dummyjson.com/data/products/52/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/52/1.png",
+            "https://i.dummyjson.com/data/products/52/2.png",
+            "https://i.dummyjson.com/data/products/52/3.jpg",
+            "https://i.dummyjson.com/data/products/52/4.jpg",
+            "https://i.dummyjson.com/data/products/52/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 1,
+          "id": 2
+        }
+      ],
+      "totalAmount": 4505,
+      "totalItems": 6,
+      "user": {
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
+        "addresses": [
+          {
+            "name": "Jack Morris",
+            "email": "jack@gmail.com",
+            "city": "Delhi",
+            "state": "Delhi",
+            "pinCode": "110006",
+            "phone": "12312331232",
+            "street": "12th cross"
+          },
+          {
+            "name": "Vaibhav Sharma",
+            "email": "vaibhav@jhatu.com",
+            "phone": "9414173314",
+            "street": "Randi khana ",
+            "city": "Raandnagar",
+            "state": "RaandPradesh",
+            "pinCode": "666666"
+          }
+        ],
+        "id": 1
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Vaibhav Sharma",
+        "email": "vaibhav@jhatu.com",
+        "phone": "9414173314",
+        "street": "Randi khana ",
+        "city": "Raandnagar",
+        "state": "RaandPradesh",
+        "pinCode": "666666"
+      },
+      "status": "pending",
+      "id": 5
     }
   ]
 }
