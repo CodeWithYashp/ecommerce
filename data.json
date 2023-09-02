@@ -48,7 +48,9 @@
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/3/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ]
     },
     {
       "id": 4,
@@ -1425,7 +1427,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/78/thumbnail.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
+      ]
     },
     {
       "id": 79,
@@ -1438,7 +1442,9 @@
       "brand": "Fashion Jewellery",
       "category": "womens-jewellery",
       "thumbnail": "https://i.dummyjson.com/data/products/79/thumbnail.jpg",
-      "images": ["https://i.dummyjson.com/data/products/79/1.jpg"]
+      "images": [
+        "https://i.dummyjson.com/data/products/79/1.jpg"
+      ]
     },
     {
       "id": 80,
@@ -2391,7 +2397,17 @@
     {
       "email": "admin@gmail.com",
       "password": "Yash@230365",
-      "addresses": [],
+      "addresses": [
+        {
+          "name": "Yash Sharma",
+          "email": "ypandey.5602@gmail.com",
+          "phone": "9782527528",
+          "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+          "city": "Chandigarh",
+          "state": "Chandigarh",
+          "pinCode": "160036"
+        }
+      ],
       "role": "admin",
       "id": 3
     }
@@ -2458,7 +2474,7 @@
         "state": "Karnataka",
         "pinCode": "560034"
       },
-      "status": "pending",
+      "status": "cancelled",
       "id": 1
     },
     {
@@ -2521,7 +2537,7 @@
         "state": "Karnataka",
         "pinCode": "560034"
       },
-      "status": "pending",
+      "status": "delivered",
       "id": 2
     },
     {
@@ -2537,7 +2553,9 @@
           "brand": "Samsung",
           "category": "smartphones",
           "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-          "images": ["https://i.dummyjson.com/data/products/3/1.jpg"],
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
           "quantity": 2,
           "user": 2
         },
@@ -2653,7 +2671,7 @@
         "state": "Karnataka",
         "pinCode": "560034"
       },
-      "status": "pending",
+      "status": "dispatched",
       "id": 4
     },
     {
@@ -2718,6 +2736,355 @@
       },
       "status": "pending",
       "id": 5
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 1111,
+          "discountPercentage": 17.94,
+          "rating": 0,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 912,
+      "totalItems": 1,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/5/1.jpg",
+            "https://i.dummyjson.com/data/products/5/2.jpg",
+            "https://i.dummyjson.com/data/products/5/3.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        },
+        {
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/5/1.jpg",
+            "https://i.dummyjson.com/data/products/5/2.jpg",
+            "https://i.dummyjson.com/data/products/5/3.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 2
+        }
+      ],
+      "totalAmount": 892,
+      "totalItems": 2,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 1111,
+          "discountPercentage": 17.94,
+          "rating": 0,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 3,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 2736,
+      "totalItems": 3,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "title": "HP Pavilion 15-DK1056WM",
+          "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "price": 1099,
+          "discountPercentage": 6.18,
+          "rating": 4.43,
+          "stock": 89,
+          "brand": "HP Pavilion",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+          "images": [
+            "https://i.dummyjson.com/data/products/10/1.jpg",
+            "https://i.dummyjson.com/data/products/10/2.jpg",
+            "https://i.dummyjson.com/data/products/10/3.jpg",
+            "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 1031,
+      "totalItems": 1,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 9
+    },
+    {
+      "items": [
+        {
+          "title": "Samsung Galaxy Book",
+          "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+          "price": 1499,
+          "discountPercentage": 4.15,
+          "rating": 4.25,
+          "stock": 50,
+          "brand": "Samsung",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/7/1.jpg",
+            "https://i.dummyjson.com/data/products/7/2.jpg",
+            "https://i.dummyjson.com/data/products/7/3.jpg",
+            "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 1437,
+      "totalItems": 1,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 10
+    },
+    {
+      "items": [
+        {
+          "title": "Infinix INBOOK",
+          "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+          "price": 1099,
+          "discountPercentage": 11.83,
+          "rating": 4.54,
+          "stock": 96,
+          "brand": "Infinix",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/9/1.jpg",
+            "https://i.dummyjson.com/data/products/9/2.png",
+            "https://i.dummyjson.com/data/products/9/3.png",
+            "https://i.dummyjson.com/data/products/9/4.jpg",
+            "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 969,
+      "totalItems": 1,
+      "user": {
+        "email": "admin@gmail.com",
+        "password": "Yash@230365",
+        "addresses": [
+          {
+            "name": "Yash Sharma",
+            "email": "ypandey.5602@gmail.com",
+            "phone": "9782527528",
+            "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+            "city": "Chandigarh",
+            "state": "Chandigarh",
+            "pinCode": "160036"
+          }
+        ],
+        "role": "admin",
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Yash Sharma",
+        "email": "ypandey.5602@gmail.com",
+        "phone": "9782527528",
+        "street": "659/1,Mo-ments, Sector 38A, Chandigarh, 160036",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "pinCode": "160036"
+      },
+      "status": "pending",
+      "id": 11
     }
   ]
 }

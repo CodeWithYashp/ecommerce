@@ -1,19 +1,20 @@
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import {
   deleteItemFromCartAsync,
   selectItems,
   updateCartAsync,
-} from '../features/cart/cartSlice';
-import { Navigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { updateUserAsync } from '../features/auth/authSlice';
-import { useState } from 'react';
+} from "../features/cart/cartSlice";
+import { Navigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { updateUserAsync } from "../features/auth/authSlice";
+import { useState } from "react";
 import {
   createOrderAsync,
   selectCurrentOrder,
-} from '../features/order/orderSlice';
-import { selectUserInfo } from '../features/user/userSlice';
+} from "../features/order/orderSlice";
+import { selectUserInfo } from "../features/user/userSlice";
+import { discountedPrice } from "../app/constants";
 
 function Checkout() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ function Checkout() {
   const currentOrder = useSelector(selectCurrentOrder);
 
   const totalAmount = items.reduce(
-    (amount, item) => item.price * item.quantity + amount,
+    (amount, item) => discountedPrice(item) * item.quantity + amount,
     0
   );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
@@ -64,13 +65,13 @@ function Checkout() {
         user,
         paymentMethod,
         selectedAddress,
-        status: 'pending', // other status can be delivered, received.
+        status: "pending", // other status can be delivered, received.
       };
       dispatch(createOrderAsync(order));
       // need to redirect from here to a new page of order success.
     } else {
       // TODO : we can use proper messaging popup here
-      alert('Enter Address and Payment method');
+      alert("Enter Address and Payment method");
     }
     //TODO : Redirect to order-success page
     //TODO : clear cart after order
@@ -124,8 +125,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('name', {
-                            required: 'name is required',
+                          {...register("name", {
+                            required: "name is required",
                           })}
                           id="name"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -146,8 +147,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           id="email"
-                          {...register('email', {
-                            required: 'email is required',
+                          {...register("email", {
+                            required: "email is required",
                           })}
                           type="email"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -168,8 +169,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           id="phone"
-                          {...register('phone', {
-                            required: 'phone is required',
+                          {...register("phone", {
+                            required: "phone is required",
                           })}
                           type="tel"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -190,8 +191,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('street', {
-                            required: 'street is required',
+                          {...register("street", {
+                            required: "street is required",
                           })}
                           id="street"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -214,8 +215,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('city', {
-                            required: 'city is required',
+                          {...register("city", {
+                            required: "city is required",
                           })}
                           id="city"
                           autoComplete="address-level2"
@@ -237,8 +238,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('state', {
-                            required: 'state is required',
+                          {...register("state", {
+                            required: "state is required",
                           })}
                           id="state"
                           autoComplete="address-level1"
@@ -260,8 +261,8 @@ function Checkout() {
                       <div className="mt-2">
                         <input
                           type="text"
-                          {...register('pinCode', {
-                            required: 'pinCode is required',
+                          {...register("pinCode", {
+                            required: "pinCode is required",
                           })}
                           id="pinCode"
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -354,7 +355,7 @@ function Checkout() {
                         onChange={handlePayment}
                         value="cash"
                         type="radio"
-                        checked={paymentMethod === 'cash'}
+                        checked={paymentMethod === "cash"}
                         className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       />
                       <label
@@ -369,7 +370,7 @@ function Checkout() {
                         id="card"
                         onChange={handlePayment}
                         name="payments"
-                        checked={paymentMethod === 'card'}
+                        checked={paymentMethod === "card"}
                         value="card"
                         type="radio"
                         className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
@@ -410,7 +411,7 @@ function Checkout() {
                               <h3>
                                 <a href={item.href}>{item.title}</a>
                               </h3>
-                              <p className="ml-4">${item.price}</p>
+                              <p className="ml-4">${discountedPrice(item)}</p>
                             </div>
                             <p className="mt-1 text-sm text-gray-500">
                               {item.brand}
