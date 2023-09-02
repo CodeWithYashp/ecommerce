@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { checkUserAsync } from "../authSlice";
-import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 export default function ForgotPassword() {
   const {
@@ -22,7 +20,7 @@ export default function ForgotPassword() {
             alt="Your Company"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Enter Your Email Address
+            Enter email to reset password
           </h2>
         </div>
 
@@ -31,7 +29,7 @@ export default function ForgotPassword() {
             noValidate
             onSubmit={handleSubmit((data) => {
               console.log(data);
-              //   TODO: Implementation on backend with email
+              // TODO : implementation on backend with email
             })}
             className="space-y-6"
           >
@@ -45,11 +43,11 @@ export default function ForgotPassword() {
               <div className="mt-2">
                 <input
                   id="email"
-                  {...register("email", {
-                    required: "email is required",
+                  {...register('email', {
+                    required: 'email is required',
                     pattern: {
                       value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
-                      message: "email not valid",
+                      message: 'email not valid',
                     },
                   })}
                   type="email"
@@ -72,12 +70,12 @@ export default function ForgotPassword() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Go back to{" "}
+            Send me back to{' '}
             <Link
               to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Login Instead
+              Login
             </Link>
           </p>
         </div>
