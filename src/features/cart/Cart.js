@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  selectCartStatus,
   deleteItemFromCartAsync,
   selectItems,
   updateCartAsync,
@@ -8,11 +9,16 @@ import {
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { discountedPrice } from "../../app/constants";
+import { InfinitySpin } from "react-loader-spinner";
+import Modal from "../common/Modal";
+import { useState } from "react";
 
 export default function Cart() {
   const dispatch = useDispatch();
 
   const items = useSelector(selectItems);
+  const status = useSelector(selectCartStatus);
+  const [openModal, setOpenModal] = useState(false);
   const totalAmount = items.reduce(
     (amount, item) => discountedPrice(item) * item.quantity + amount,
     0
@@ -38,6 +44,9 @@ export default function Cart() {
               Cart
             </h1>
             <div className="flow-root">
+              {status === "loading" ? (
+                <InfinitySpin width="200" color="rgb(79 70 229)" />
+              ) : null}
               <ul className="-my-6 divide-y divide-gray-200">
                 {items.map((item) => (
                   <li key={item.id} className="flex py-6">
@@ -82,8 +91,19 @@ export default function Cart() {
                         </div>
 
                         <div className="flex">
+                          <Modal
+                            title={`Remove ${item.title}`}
+                            message="Are you sure you want to remove this item from cart"
+                            dangerOption="Delete"
+                            cancelOption="Cancel"
+                            dangerAction={(e) => handleRemove(e, item.id)}
+                            cancelAction={()=>setOpenModal(false)}
+                            showModal={openModal === item.id}
+                          ></Modal>
                           <button
-                            onClick={(e) => handleRemove(e, item.id)}
+                            onClick={(e) => {
+                              setOpenModal(item.id);
+                            }}
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
                           >
