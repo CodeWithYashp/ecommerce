@@ -101,7 +101,9 @@ function ProductForm() {
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               {selectedProduct.deleted && (
-                <h2 className="text-red-500 col-span-6">Product has been deleted!</h2>
+                <h2 className="text-red-500 col-span-6">
+                  Product has been deleted!
+                </h2>
               )}{" "}
               <div className="sm:col-span-6">
                 <label
@@ -160,7 +162,9 @@ function ProductForm() {
                   >
                     <option value="">--choose brand--</option>
                     {brands.map((brand) => (
-                      <option value={brand.value}>{brand.label}</option>
+                      <option key={brand.value} value={brand.value}>
+                        {brand.label}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -180,7 +184,9 @@ function ProductForm() {
                   >
                     <option value="">--choose category--</option>
                     {categories.map((category) => (
-                      <option value={category.value}>{category.label}</option>
+                      <option key={category.value} value={category.value}>
+                        {category.label}
+                      </option>
                     ))}
                   </select>
                 </div>

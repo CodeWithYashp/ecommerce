@@ -125,8 +125,8 @@ function AdminOrders() {
                       </div>
                     </td>
                     <td className="py-3 px-6 text-left">
-                      {order.items.map((item) => (
-                        <div className="flex items-center" key={item.id}>
+                      {order.items.map((item, index) => (
+                        <div key={index} className="flex items-center">
                           <div className="mr-2">
                             <img
                               className="w-6 h-6 rounded-full"
