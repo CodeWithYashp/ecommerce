@@ -7,12 +7,13 @@ import {
 } from "../features/cart/cartSlice";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { updateUserAsync } from "../features/user/userSlice";
 import { useState } from "react";
 import {
   createOrderAsync,
   selectCurrentOrder,
 } from "../features/order/orderSlice";
-import { selectUserInfo, updateUserAsync } from "../features/user/userSlice";
+import { selectUserInfo } from "../features/user/userSlice";
 import { discountedPrice } from "../app/constants";
 
 function Checkout() {

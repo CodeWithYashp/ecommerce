@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ITEMS_PER_PAGE, discountedPrice } from "../../../app/constants";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,8 +8,8 @@ import {
   updateOrderAsync,
 } from "../../order/orderSlice";
 import {
-  EyeIcon,
   PencilIcon,
+  EyeIcon,
   ArrowUpIcon,
   ArrowDownIcon,
 } from "@heroicons/react/24/outline";
@@ -17,36 +17,23 @@ import Pagination from "../../common/Pagination";
 
 function AdminOrders() {
   const [page, setPage] = useState(1);
-  const [sort, setSort] = useState({});
   const dispatch = useDispatch();
   const orders = useSelector(selectOrders);
   const totalOrders = useSelector(selectTotalOrders);
   const [editableOrderId, setEditableOrderId] = useState(-1);
+  const [sort, setSort] = useState({});
+
   const handleEdit = (order) => {
     setEditableOrderId(order.id);
   };
   const handleShow = () => {
-    console.log(handleShow);
+    console.log("handleShow");
   };
+
   const handleUpdate = (e, order) => {
     const updatedOrder = { ...order, status: e.target.value };
     dispatch(updateOrderAsync(updatedOrder));
     setEditableOrderId(-1);
-  };
-
-  const chooseColor = (status) => {
-    switch (status) {
-      case "pending":
-        return `bg-yellow-200 text-yellow-600`;
-      case "delivered":
-        return `bg-green-200 text-green-600`;
-      case "cancelled":
-        return `bg-red-200 text-red-600`;
-      case "dispatched":
-        return `bg-purple-200 text-purple-600`;
-      default:
-        return `bg-yellow-200 text-yellow-600 `;
-    }
   };
 
   const handlePage = (page) => {
@@ -57,6 +44,21 @@ function AdminOrders() {
     const sort = { _sort: sortOption.sort, _order: sortOption.order };
     console.log({ sort });
     setSort(sort);
+  };
+
+  const chooseColor = (status) => {
+    switch (status) {
+      case "pending":
+        return "bg-purple-200 text-purple-600";
+      case "dispatched":
+        return "bg-yellow-200 text-yellow-600";
+      case "delivered":
+        return "bg-green-200 text-green-600";
+      case "cancelled":
+        return "bg-red-200 text-red-600";
+      default:
+        return "bg-purple-200 text-purple-600";
+    }
   };
 
   useEffect(() => {
@@ -81,7 +83,7 @@ function AdminOrders() {
                       })
                     }
                   >
-                    Order No. {"  "}
+                    Order#{" "}
                     {sort._sort === "id" &&
                       (sort._order === "asc" ? (
                         <ArrowUpIcon className="w-4 h-4 inline"></ArrowUpIcon>
@@ -99,7 +101,7 @@ function AdminOrders() {
                       })
                     }
                   >
-                    Total Amount {"  "}
+                    Total Amount{" "}
                     {sort._sort === "totalAmount" &&
                       (sort._order === "asc" ? (
                         <ArrowUpIcon className="w-4 h-4 inline"></ArrowUpIcon>
@@ -115,8 +117,8 @@ function AdminOrders() {
               <tbody className="text-gray-600 text-sm font-light">
                 {orders.map((order) => (
                   <tr
-                    className="border-b border-gray-200 hover:bg-gray-100"
                     key={order.id}
+                    className="border-b border-gray-200 hover:bg-gray-100"
                   >
                     <td className="py-3 px-6 text-left whitespace-nowrap">
                       <div className="flex items-center">
@@ -130,32 +132,32 @@ function AdminOrders() {
                           <div className="mr-2">
                             <img
                               className="w-6 h-6 rounded-full"
-                              src={item.thumbnail}
-                              alt={item.title}
+                              src={item.product.thumbnail}
+                              alt={item.product.title}
                             />
                           </div>
                           <span>
-                            {item.title} - #{item.quantity} - ${" "}
-                            {discountedPrice(item)}
+                            {item.product.title} - #{item.quantity} - $
+                            {discountedPrice(item.product)}
                           </span>
                         </div>
                       ))}
                     </td>
                     <td className="py-3 px-6 text-center">
                       <div className="flex items-center justify-center">
-                        $ {order.totalAmount}
+                        ${order.totalAmount}
                       </div>
                     </td>
                     <td className="py-3 px-6 text-center">
-                      <div>
+                      <div className="">
                         <div>
-                          <strong>{order.selectedAddress.name}, </strong>,
+                          <strong>{order.selectedAddress.name}</strong>,
                         </div>
-                        <div> {order.selectedAddress.street}, </div>
-                        <div> {order.selectedAddress.city}, </div>
-                        <div> {order.selectedAddress.state}, </div>
-                        <div> {order.selectedAddress.pinCode}, </div>
-                        <div> {order.selectedAddress.phone}</div>
+                        <div>{order.selectedAddress.street},</div>
+                        <div>{order.selectedAddress.city}, </div>
+                        <div>{order.selectedAddress.state}, </div>
+                        <div>{order.selectedAddress.pinCode}, </div>
+                        <div>{order.selectedAddress.phone}, </div>
                       </div>
                     </td>
                     <td className="py-3 px-6 text-center">
@@ -177,18 +179,18 @@ function AdminOrders() {
                       )}
                     </td>
                     <td className="py-3 px-6 text-center">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-110">
+                      <div className="flex item-center justify-center">
+                        <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-120">
                           <EyeIcon
-                            className="w-5 h-5 cursor-pointer"
+                            className="w-8 cursor-pointer h-8"
                             onClick={(e) => handleShow(order)}
-                          />
+                          ></EyeIcon>
                         </div>
-                        <div className="w-6 transform hover:text-purple-500 hover:scale-110">
+                        <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-120">
                           <PencilIcon
-                            className="w-5 h-5 cursor-pointer"
+                            className="w-8 cursor-pointer h-8"
                             onClick={(e) => handleEdit(order)}
-                          />
+                          ></PencilIcon>
                         </div>
                       </div>
                     </td>

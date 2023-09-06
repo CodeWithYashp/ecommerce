@@ -1,5 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectError, selectLoggedInUser } from "../authSlice";
+import {
+  selectError,
+  selectLoggedInUser,
+  selectloggedInUserToken,
+} from "../authSlice";
 import { Link, Navigate } from "react-router-dom";
 import { checkUserAsync } from "../authSlice";
 import { useForm } from "react-hook-form";
@@ -7,7 +11,7 @@ import { useForm } from "react-hook-form";
 export default function Login() {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectloggedInUserToken);
   const {
     register,
     handleSubmit,
@@ -21,7 +25,7 @@ export default function Login() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"
-            src="/logo.png"
+            src="/ecommerce.png"
             alt="Your Company"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -95,7 +99,9 @@ export default function Login() {
                   <p className="text-red-500">{errors.password.message}</p>
                 )}
               </div>
-              {error && <p className="text-red-500">{error.message}</p>}
+              {error && (
+                <p className="text-red-500">{error || error.message}</p>
+              )}
             </div>
 
             <div>

@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
-import { selectLoggedInUser, createUserAsync } from "../authSlice";
+import { selectLoggedInUser, createUserAsync, selectloggedInUserToken } from "../authSlice";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
 export default function Signup() {
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectloggedInUserToken);
 
   const {
     register,
@@ -22,7 +22,7 @@ export default function Signup() {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"
-            src="/logo.png"
+            src="/ecommerce.png"
             alt="Your Company"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

@@ -11,7 +11,10 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import Protected from "./features/auth/components/Protected";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectLoggedInUser } from "./features/auth/authSlice";
+import {
+  selectLoggedInUser,
+  selectloggedInUserToken,
+} from "./features/auth/authSlice";
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 import PageNotFound from "./pages/404";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
@@ -118,7 +121,7 @@ const router = createBrowserRouter([
     path: "/order-success/:id",
     element: (
       <Protected>
-        <OrderSuccessPage></OrderSuccessPage>
+        <OrderSuccessPage></OrderSuccessPage>{" "}
       </Protected>
     ),
   },
@@ -126,7 +129,7 @@ const router = createBrowserRouter([
     path: "/orders",
     element: (
       <Protected>
-        <UserOrdersPage></UserOrdersPage>
+        <UserOrdersPage></UserOrdersPage>{" "}
       </Protected>
     ),
   },
@@ -134,7 +137,7 @@ const router = createBrowserRouter([
     path: "/profile",
     element: (
       <Protected>
-        <UserProfilePage></UserProfilePage>
+        <UserProfilePage></UserProfilePage>{" "}
       </Protected>
     ),
   },
@@ -154,12 +157,12 @@ const router = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectloggedInUserToken);
 
   useEffect(() => {
     if (user) {
-      dispatch(fetchItemsByUserIdAsync(user.id));
-      dispatch(fetchLoggedInUserAsync(user.id));
+      dispatch(fetchItemsByUserIdAsync());
+      dispatch(fetchLoggedInUserAsync());
     }
   }, [dispatch, user]);
 

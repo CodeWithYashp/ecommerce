@@ -9,10 +9,9 @@ import {
 } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { addToCartAsync, selectItems } from "../../cart/cartSlice";
-import { selectLoggedInUser } from "../../auth/authSlice";
 import { discountedPrice } from "../../../app/constants";
 import { useAlert } from "react-alert";
-import { InfinitySpin } from "react-loader-spinner";
+import { Grid } from "react-loader-spinner";
 
 // TODO: In server data we will add colors, sizes , highlights. to each product
 
@@ -48,27 +47,26 @@ function classNames(...classes) {
 export default function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  const user = useSelector(selectLoggedInUser);
-  const product = useSelector(selectProductById);
   const items = useSelector(selectItems);
-  const status = useSelector(selectProductListStatus);
+  const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
   const alert = useAlert();
+  const status = useSelector(selectProductListStatus);
 
   const handleCart = (e) => {
     e.preventDefault();
     if (items.findIndex((item) => item.product.id === product.id) < 0) {
+      console.log({ items, product });
       const newItem = {
         product: product.id,
         quantity: 1,
-        user: user.id,
       };
       dispatch(addToCartAsync(newItem));
-      //TODO : It will be based on server response from backend
-      alert.success("Item added to cart!");
+      // TODO: it will be based on server response of backend
+      alert.success("Item added to Cart");
     } else {
-      alert.error("Item already in cart!");
+      alert.error("Item Already added");
     }
   };
 
@@ -79,7 +77,16 @@ export default function ProductDetail() {
   return (
     <div className="bg-white">
       {status === "loading" ? (
-        <InfinitySpin width="200" color="rgb(79 70 229)" />
+        <Grid
+          height="80"
+          width="80"
+          color="rgb(79, 70, 229) "
+          ariaLabel="grid-loading"
+          radius="12.5"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
       ) : null}
       {product && (
         <div className="pt-6">
@@ -165,7 +172,7 @@ export default function ProductDetail() {
             {/* Options */}
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl line-through tracking-tight text-gray-900">
+              <p className="text-xl line-through tracking-tight text-gray-900">
                 ${product.price}
               </p>
               <p className="text-3xl tracking-tight text-gray-900">

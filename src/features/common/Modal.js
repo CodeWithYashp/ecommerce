@@ -1,7 +1,6 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
 
 export default function Modal({
   title,
@@ -9,10 +8,13 @@ export default function Modal({
   dangerOption,
   cancelOption,
   dangerAction,
-  showModal,
   cancelAction,
+  showModal,
 }) {
   const [open, setOpen] = useState(false);
+
+  const cancelButtonRef = useRef(null);
+
   const handleDanger = () => {
     setOpen(false);
     dangerAction();
@@ -22,8 +24,6 @@ export default function Modal({
     setOpen(false);
     cancelAction();
   };
-
-  const cancelButtonRef = useRef(null);
 
   useEffect(() => {
     if (showModal) {
