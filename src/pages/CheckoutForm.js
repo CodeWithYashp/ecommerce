@@ -61,7 +61,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `https://shopnest-git-main-codewithyashp.vercel.app/order-success/${currentOrder.id}`,
+        return_url: `https://yash-ecommerceshopnest.vercel.app/order-success/${currentOrder.id}`,
       },
     });
 
