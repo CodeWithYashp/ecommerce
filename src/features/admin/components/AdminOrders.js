@@ -26,9 +26,6 @@ function AdminOrders() {
   const handleEdit = (order) => {
     setEditableOrderId(order.id);
   };
-  const handleShow = () => {
-    console.log("handleShow");
-  };
 
   const handleUpdate = (e, order) => {
     const updatedOrder = { ...order, status: e.target.value };
@@ -42,7 +39,6 @@ function AdminOrders() {
 
   const handleSort = (sortOption) => {
     const sort = { _sort: sortOption.sort, _order: sortOption.order };
-    console.log({ sort });
     setSort(sort);
   };
 
@@ -229,10 +225,7 @@ function AdminOrders() {
                     <td className="py-3 px-1 text-center">
                       <div className="flex item-center justify-center">
                         <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-120">
-                          <EyeIcon
-                            className="w-8 cursor-pointer h-8"
-                            onClick={(e) => handleShow(order)}
-                          ></EyeIcon>
+                          <EyeIcon className="w-8 cursor-pointer h-8"></EyeIcon>
                         </div>
                         <div className="w-6 mr-2 transform hover:text-purple-500 hover:scale-120">
                           <PencilIcon

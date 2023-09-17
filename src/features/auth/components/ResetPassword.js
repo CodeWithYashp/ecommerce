@@ -21,7 +21,7 @@ export default function ResetPassword() {
     formState: { errors },
   } = useForm();
 
-  console.log(errors);
+ 
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function ResetPassword() {
             <form
               noValidate
               onSubmit={handleSubmit((data) => {
-                console.log(data);
+               
                 dispatch(
                   resetPasswordAsync({ email, token, password: data.password })
                 );
